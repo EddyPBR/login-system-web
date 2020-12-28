@@ -31,6 +31,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     background: linear-gradient(var(--color-background-dark), var(--color-background-light));
     color: #FFF;
+    font: 1.6rem 'Saira', sans-serif;
   }
   h1,h2,h3,h4,h5,h6 {
     color: var(--color-title);
