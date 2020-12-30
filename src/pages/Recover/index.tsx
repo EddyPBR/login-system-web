@@ -37,6 +37,7 @@ const Column = styled.div`
 
   @media (max-width: 960px) {
     margin: 40px 0px;
+    width: auto;
   }
 
   @media (max-width: 380px) {
@@ -121,6 +122,10 @@ const Form = styled.form`
   width: 100%;
   max-width: 400px;
   margin-left: 30px;
+
+  @media (max-width: 960px) {
+    margin-left: 0;
+  }
 `;
 
 const Label = styled.label`
@@ -161,6 +166,13 @@ const Row = styled.div`
   && > p {
     text-align: right;
     margin: 0;
+  }
+
+  @media (max-width: 380px) {
+    && > p {
+      text-align: left;
+      margin-left: 10px;
+    }
   }
 `;
 
