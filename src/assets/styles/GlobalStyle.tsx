@@ -14,7 +14,8 @@ export const GlobalStyle = createGlobalStyle`
     --red-dark: #780C0C;
     --yellow-light: #d2cd3a;
     --yellow-dark: #7D720C;
-    --purple: #6C63FF;
+    --purple-light: #6C63FF;
+    --purple-dark: #39447A;
     font-size: 60%;
   }
   * {
