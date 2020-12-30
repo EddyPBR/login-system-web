@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, FormEvent } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
@@ -202,10 +202,20 @@ const Background = styled.div`
 `;
 
 const Recover: React.FC = () => {
+  const [email, setEmail] = useState("");
+
+  const handleSendEmail = (event: FormEvent) => {
+    event.preventDefault();
+    // need create a call for a API
+    console.log({
+      email,
+    });
+  };
+
   return (
     <Container>
       <Column>
-        <Form method="POST">
+        <Form onSubmit={(event) => handleSendEmail(event)} method="POST">
           <Title>Recover</Title>
           <Text>
             Esqueceu sua senha? - não se preocupe, vamos recupera-lá para você é
@@ -214,10 +224,18 @@ const Recover: React.FC = () => {
           </Text>
           <Label htmlFor="email">
             Email
-            <Input type="text" id="email" name="email" />
+            <Input
+              type="text"
+              id="email"
+              name="email"
+              value={email}
+              onChange={(event) => setEmail(event.target.value)}
+            />
           </Label>
           <Row>
-            <Button>Send email</Button>
+            <Button onClick={(event) => handleSendEmail(event)}>
+              Send email
+            </Button>
             <Text>
               Lembrou da senha?
               <StyledLink to="/login">Faça login</StyledLink>
