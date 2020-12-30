@@ -70,7 +70,7 @@ const Subtitle = styled.h2`
 const Text = styled.p`
   font-size: 1.4rem;
   line-height: 3.2rem;
-  text-align: right;
+  text-align: center;
 `;
 
 const Button = styled(Link)`
@@ -154,9 +154,14 @@ const Row = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-top: 30px;
+  margin-bottom: 8px;
+
+  && > p {
+    text-align: right;
+  }
 `;
 
-const RegisterLink = styled(Link)`
+const StyledLink = styled(Link)`
   font-weight: bold;
   color: var(--color-title);
   margin-left: 4px;
@@ -197,9 +202,13 @@ const Login: React.FC = () => {
               <Button to="/profile">Login</Button>
               <Text>
                 Não possui uma conta?
-                <RegisterLink to="/register">Cadastre-se</RegisterLink>
+                <StyledLink to="/register">Cadastre-se</StyledLink>
               </Text>
             </Row>
+            <Text>
+              Esqueceu sua senha? Não tem problema!
+              <StyledLink to="/recover">Recuperar senha</StyledLink>
+            </Text>
           </Form>
         </Column>
         <Column>
