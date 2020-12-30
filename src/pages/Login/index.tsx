@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, FormEvent } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -73,7 +73,7 @@ const Text = styled.p`
   text-align: center;
 `;
 
-const Button = styled(Link)`
+const Button = styled.button`
   width: 100vw;
   height: 100vh;
   max-width: 150px;
@@ -184,22 +184,46 @@ const Background = styled.div`
 `;
 
 const Login: React.FC = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = (event: FormEvent) => {
+    event.preventDefault();
+    // need create a call for a API
+    console.log({
+      email,
+      password,
+    });
+  };
+
   return (
     <>
       <Container>
         <Column>
-          <Form>
+          <Form onSubmit={(event) => handleLogin(event)} method="POST">
             <Title>Login</Title>
             <Label htmlFor="email">
               Email
-              <Input type="text" id="email" />
+              <Input
+                type="text"
+                id="email"
+                name="email"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
+              />
             </Label>
             <Label htmlFor="password">
               Password
-              <Input type="password" id="password" />
+              <Input
+                type="password"
+                id="password"
+                name="password"
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
+              />
             </Label>
             <Row>
-              <Button to="/profile">Login</Button>
+              <Button onClick={(event) => handleLogin(event)}>Login</Button>
               <Text>
                 Não possui uma conta?
                 <StyledLink to="/register">Cadastre-se</StyledLink>
