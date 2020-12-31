@@ -6,6 +6,7 @@ import Login from "./pages/Login";
 import Recover from "./pages/Recover";
 import EmailSended from "./pages/EmailSended";
 import Welcome from "./pages/Welcome";
+import Logout from "./pages/Logout";
 
 const Routes: React.FC = () => {
   return (
@@ -16,6 +17,7 @@ const Routes: React.FC = () => {
         <Route path="/recover" exact component={Recover} />
         <Route path="/email" exact component={EmailSended} />
         <Route path="/welcome" exact component={Welcome} />
+        <Route path="/logout" exact component={Logout} />
         <Redirect to="/" />
       </Switch>
     </BrowserRouter>
