@@ -61,7 +61,7 @@ const EmailSended: React.FC = () => {
       <Title>Email Sended</Title>
       <Text>
         Nós enviamos um email para você, por favor confirme tambem se o email
-        não caiu na caixa de span faça{" "}
+        não caiu na caixa de span, faça{" "}
         <StyledLink to="/login">login</StyledLink> para continuar.
       </Text>
       <Svg src={emailSvg} alt="A email has been sended" />
