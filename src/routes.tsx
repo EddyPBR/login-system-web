@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Redirect, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import Register from "./pages/Register";
 import Recover from "./pages/Recover";
 import EmailSended from "./pages/EmailSended";
 import Welcome from "./pages/Welcome";
@@ -18,6 +19,7 @@ const Routes: React.FC = () => {
         <Route path="/email" exact component={EmailSended} />
         <Route path="/welcome" exact component={Welcome} />
         <Route path="/logout" exact component={Logout} />
+        <Route path="/register" exact component={Register} />
         <Redirect to="/" />
       </Switch>
     </BrowserRouter>
